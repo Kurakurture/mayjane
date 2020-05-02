@@ -20,8 +20,7 @@ public class LevelManager : MonoBehaviour
     {
         if (levelToDestroy != null)
             Destroy(levelToDestroy);
-        Instantiate(nextLevel, new Vector3(currentLevel.transform.position.x + distanceBetweenLevels, 0, 0), Quaternion.identity);
         levelToDestroy = currentLevel;
-        currentLevel = nextLevel;                
+        currentLevel = Instantiate(nextLevel, new Vector3(currentLevel.transform.position.x + distanceBetweenLevels, 0, 0), Quaternion.identity);             
     }
 }
