@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public float distanceBetweenLevels = 30;
+    public float levelWidth = 30;
+    public int levelsCompleted = 0;
+    public int IncreaseDifficultyAfterLevels = 5;
+    public int currentLevelDifficulty = 1;
     public GameObject currentLevel;
+    public GameObject creature;
     public GameObject[] levelPrefab;
 
     GameObject levelToDestroy;
@@ -14,6 +18,7 @@ public class LevelManager : MonoBehaviour
     {
         GameObject nextLevel = levelPrefab[Random.Range(0, levelPrefab.Length)];
         loadNewAndDestroyOldLevel(nextLevel);
+        CheckLevelDifficulty();
     }
 
     void loadNewAndDestroyOldLevel(GameObject nextLevel)
@@ -21,6 +26,12 @@ public class LevelManager : MonoBehaviour
         if (levelToDestroy != null)
             Destroy(levelToDestroy);
         levelToDestroy = currentLevel;
-        currentLevel = Instantiate(nextLevel, new Vector3(currentLevel.transform.position.x + distanceBetweenLevels, 0, 0), Quaternion.identity);             
+        currentLevel = Instantiate(nextLevel, new Vector3(currentLevel.transform.position.x + levelWidth, 0, 0), Quaternion.identity);
+    }
+
+    void CheckLevelDifficulty()
+    {
+        if (levelsCompleted == IncreaseDifficultyAfterLevels || levelsCompleted == IncreaseDifficultyAfterLevels * 2 || levelsCompleted == IncreaseDifficultyAfterLevels * 3)
+            currentLevelDifficulty++;
     }
 }
