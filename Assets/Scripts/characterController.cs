@@ -8,6 +8,7 @@ public class characterController : MonoBehaviour
     public Collider charCollider;
     public Transform charTransform;
     public bool active = false;
+    public bool destroyQueue = false;
     public Vector3 foreceVector;
     public float forceY;
     public float randomForceY;
@@ -16,6 +17,10 @@ public class characterController : MonoBehaviour
     public Material[] charMaterials;
     public ParticleSystem effect;
     public bool iAmMain = false;
+
+    public int numberOfChar;
+
+    public List<characterController> _players;
 
     public gamePlayController gamePlayController;
 
@@ -31,7 +36,10 @@ public class characterController : MonoBehaviour
             active = true;
 
         if (other.tag == "destroyer")
-            Destroy(gameObject);
+        {
+            active = false;
+            destroyQueue = true;
+        }
     }
 
     void Update()
@@ -51,6 +59,14 @@ public class characterController : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
             CharacterJump();
+
+
+        _players = gamePlayController.players;
+
+        if (destroyQueue){
+            Destroy(gameObject);
+            _players.RemoveAt(0);
+            }
     }
 
     void CharacterJump()

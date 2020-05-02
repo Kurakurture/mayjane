@@ -12,7 +12,6 @@ public class characterOnceSpawner : MonoBehaviour
     void Start()
     {
         gamePlayController = GameObject.Find("GameplayController").GetComponent<gamePlayController>();
-
     }
 
     // Update is called once per frame
