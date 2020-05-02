@@ -142,11 +142,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charRigidbody: {fileID: 5769456191155208782}
   charCollider: {fileID: 0}
+  charTransform: {fileID: 0}
   active: 0
   foreceVector: {x: 0, y: 1, z: 0}
   forceY: 200
   randomForceY: 0
-  forceX: 10
+  forceX: 0
   randomForceX: 0
   charMaterials: []
   effect: {fileID: 4383040037832666997}
