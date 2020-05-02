@@ -15,6 +15,7 @@ public class characterController : MonoBehaviour
     public float randomForceX;
     public Material[] charMaterials;
     public ParticleSystem effect;
+    public bool iAmMain = false;
 
     public gamePlayController gamePlayController;
 
@@ -28,6 +29,9 @@ public class characterController : MonoBehaviour
     {
         if (other.tag == "player")
             active = true;
+
+        if (other.tag == "destroyer")
+            Destroy(gameObject);
     }
 
     void Update()
@@ -35,11 +39,13 @@ public class characterController : MonoBehaviour
         if (!active)
         {
             charRigidbody.useGravity = false;
+            charRigidbody.constraints = RigidbodyConstraints.FreezePositionY;
             effect.Play(false);
         }
         else
         {
             charRigidbody.useGravity = true;
+            charRigidbody.constraints = RigidbodyConstraints.None;
             effect.Play(true);
         }
 
@@ -50,8 +56,8 @@ public class characterController : MonoBehaviour
     void CharacterJump()
     {
         Vector3 _force = foreceVector;
-        _force.y += forceY + Random.Range(0f,randomForceY);
-        _force.x += forceX + Random.Range(0f,randomForceX);
+        _force.y += forceY + Random.Range(0f, randomForceY);
+        _force.x += forceX + Random.Range(0f, randomForceX);
 
         if (active)
         {

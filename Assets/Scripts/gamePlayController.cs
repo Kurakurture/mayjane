@@ -1,19 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gamePlayController : MonoBehaviour
 {
     public List<characterController> players;
-    
-    void Start()
+    public Text scoreText;
+
+    private void Start()
     {
-        
+        if (players.Count < 1)
+            AddPlayerToList(GameObject.Find("character"));
     }
-
-    void Update()
+    
+    public void AddPlayerToList(GameObject _player)
     {
-        players.Add(GameObject.Find("character").GetComponent<characterController>());
+        var controller = _player.GetComponent<characterController>();
+        players.Add(controller);
 
+        for (int a =0; a<players.Count; a++){
+
+        }
     }
 }
