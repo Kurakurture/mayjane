@@ -39,6 +39,7 @@ public class characterController : MonoBehaviour
         {
             active = false;
             destroyQueue = true;
+            Destroy(gameObject);
         }
     }
 
