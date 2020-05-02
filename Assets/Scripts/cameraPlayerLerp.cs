@@ -23,16 +23,13 @@ public class cameraPlayerLerp : MonoBehaviour
         gamePlayController = GameObject.Find("GameplayController").GetComponent<gamePlayController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         _players = gamePlayController.players;
-        int notNull = _players.FindIndex(item => item != null);
-        player = _players[notNull];
+        player = _players[_players.FindIndex(item => item != null)];
 
         playerX = player.charTransform.position.x;
         playerY = player.charTransform.position.y;
-
-        //_players.RemoveAll(item => item == null);
 
         selfTransform.position = new Vector3(Mathf.Lerp(selfTransform.position.x, playerX, lerpSpeed), Mathf.Lerp(selfTransform.position.y, playerY, lerpSpeed), selfTransform.position.z);
     }
