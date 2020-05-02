@@ -6,6 +6,7 @@ using UnityEngine;
 public class fallingScript : MonoBehaviour
 {
     public Transform tr;
+    public Rigidbody rb;
     private bool fall = false;
     public float fallSpeed = 1.0f;
 
@@ -13,6 +14,7 @@ public class fallingScript : MonoBehaviour
     void Start()
     {
         tr = GetComponent<Transform>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,12 @@ public class fallingScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        fall = true;
+        if (other.gameObject.tag == "player")
+        {
+            //fall = true;
+            print("trigger");
+            rb.AddForce(0, -1 * fallSpeed, 0);
+            rb.useGravity = true;
+        }
     }
 }
