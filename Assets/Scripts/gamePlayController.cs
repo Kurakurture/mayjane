@@ -8,7 +8,6 @@ public class gamePlayController : MonoBehaviour
     public List<characterController> players;
     public Text scoreText;
     public GameObject charCamera;
-    public int countOfChars = 0;
 
     public int goalScore = 10;
 
@@ -20,7 +19,7 @@ public class gamePlayController : MonoBehaviour
         charCamera = GameObject.Find("Main Camera");
     }
 
-    [SerializeField] public float speed = 1;
+    private float speed = 1;
     float _speedTimer;
 
     private void Update()

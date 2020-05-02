@@ -146,11 +146,12 @@ MonoBehaviour:
   active: 0
   foreceVector: {x: 0, y: 1, z: 0}
   forceY: 200
-  randomForceY: 0
-  forceX: 0
-  randomForceX: 0
-  charMaterials: []
-  effect: {fileID: 4383040037832666997}
+  randomForceY: 50
+  forceX: 10
+  randomForceX: 20
+  heightOfDeath: -10
+  _players: []
+  gamePlayController: {fileID: 0}
 --- !u!54 &5769456191155208782
 Rigidbody:
   m_ObjectHideFlags: 0

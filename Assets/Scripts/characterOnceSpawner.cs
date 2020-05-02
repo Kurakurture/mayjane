@@ -7,17 +7,11 @@ public class characterOnceSpawner : MonoBehaviour
     public GameObject playerExample;
     public gamePlayController gamePlayController;
     public GameObject parentObject;
+    private List<characterController> _players;
 
-    // Start is called before the first frame update
     void Start()
     {
         gamePlayController = GameObject.Find("GameplayController").GetComponent<gamePlayController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,9 +22,14 @@ public class characterOnceSpawner : MonoBehaviour
 
     private void CreateNewPlayer(Transform _position)
     {
-        var _gameoject = Instantiate(playerExample, new Vector3(_position.position.x,_position.position.y,_position.position.z), Quaternion.identity);
+         _players = gamePlayController.players;
+         var mainPlayer = _players[0];
+        Rigidbody _mainplayerRigidbody = mainPlayer.charRigidbody;
+
+        var _gameoject = Instantiate(playerExample, new Vector3(_position.position.x, _position.position.y, _position.position.z), Quaternion.identity);
         var _controller = _gameoject.GetComponent<characterController>();
         _controller.active = true;
+        _controller.charRigidbody.velocity = _mainplayerRigidbody.velocity;
 
         gamePlayController.players.Add(_controller);
     }
