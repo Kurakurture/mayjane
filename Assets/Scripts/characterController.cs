@@ -65,7 +65,7 @@ public class characterController : MonoBehaviour
 
         if (destroyQueue){
             Destroy(gameObject);
-            _players.RemoveAt(0);
+            //_players.RemoveAt(0);
             }
     }
 
