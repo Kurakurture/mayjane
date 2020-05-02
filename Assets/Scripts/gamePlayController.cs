@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gamePlayController : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class gamePlayController : MonoBehaviour
         {
             EverySecondChecker();
             _speedTimer = 0;
+        }
+
+        if(players.Count >= goalScore){
+            SceneManager.LoadScene("EndingScene");
         }
     }
 
