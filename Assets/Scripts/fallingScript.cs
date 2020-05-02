@@ -31,7 +31,7 @@ public class fallingScript : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             //fall = true;
-            print("trigger");
+            //print("trigger");
             rb.AddForce(0, -1 * fallSpeed, 0);
             rb.useGravity = true;
         }
