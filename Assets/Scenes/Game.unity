@@ -460,6 +460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251435993}
+  - component: {fileID: 1251435994}
   m_Layer: 0
   m_Name: GameplayController
   m_TagString: Untagged
@@ -481,6 +482,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251435994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251435992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f478f05ab4f9480b810d37ea5d36aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
 --- !u!1001 &1289695219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -769,6 +783,21 @@ PrefabInstance:
         type: 3}
       propertyPath: active
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378869465666617651, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
+        type: 3}
+      propertyPath: randomForceX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378869465666617651, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
+        type: 3}
+      propertyPath: randomForceY
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378869465666617651, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
+        type: 3}
+      propertyPath: forceX
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7885602592822566816, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
         type: 3}

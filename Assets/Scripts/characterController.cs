@@ -16,22 +16,21 @@ public class characterController : MonoBehaviour
     public Material[] charMaterials;
     public ParticleSystem effect;
 
+    public gamePlayController gamePlayController;
+
     void Start()
     {
         charTransform = this.transform;
+        gamePlayController = GameObject.Find("GameplayController").GetComponent<gamePlayController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "player")
             active = true;
-
     }
 
-
-
-    void FixedUpdate()
+    void Update()
     {
         if (!active)
         {
@@ -42,7 +41,6 @@ public class characterController : MonoBehaviour
         {
             charRigidbody.useGravity = true;
             effect.Play(true);
-
         }
 
         if (Input.GetKeyDown("space"))
@@ -51,18 +49,13 @@ public class characterController : MonoBehaviour
 
     void CharacterJump()
     {
-
         Vector3 _force = foreceVector;
-        _force.y += forceY;
-        _force.x += forceX;
-
+        _force.y += forceY + Random.Range(0f,randomForceY);
+        _force.x += forceX + Random.Range(0f,randomForceX);
 
         if (active)
         {
             charRigidbody.AddForce(_force);
-
         }
-
-
     }
 }

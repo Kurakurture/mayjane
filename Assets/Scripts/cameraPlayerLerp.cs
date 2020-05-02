@@ -17,8 +17,6 @@ public class cameraPlayerLerp : MonoBehaviour
         {
             player = GameObject.Find("character").GetComponent<characterController>();
         }
-
-
     }
 
     void Update()
