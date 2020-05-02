@@ -10,6 +10,8 @@ public class gamePlayController : MonoBehaviour
     public GameObject charCamera;
     public int countOfChars = 0;
 
+    public int goalScore = 10;
+
     private void Start()
     {
         if (players.Count < 1)
@@ -39,10 +41,10 @@ public class gamePlayController : MonoBehaviour
         var controller = _player.GetComponent<characterController>();
         players.Add(controller);
     }
-    
+
     public void EverySecondChecker()
     {
-        scoreText.text = players.Count.ToString();
+        scoreText.text = string.Format("Collected: {0} / {1}", players.Count.ToString(),goalScore);
         players.RemoveAll(item => item == null);
     }
 }

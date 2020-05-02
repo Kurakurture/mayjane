@@ -13,11 +13,6 @@ public class characterController : MonoBehaviour
     public float randomForceY;
     public float forceX;
     public float randomForceX;
-    public Material[] charMaterials;
-    public ParticleSystem effect;
-    public bool iAmMain = false;
-
-    public int numberOfChar;
 
     public List<characterController> _players;
 
@@ -47,18 +42,16 @@ public class characterController : MonoBehaviour
         {
             charRigidbody.useGravity = false;
             charRigidbody.constraints = RigidbodyConstraints.FreezePositionY;
-            effect.Play(false);
         }
         else
         {
             charRigidbody.useGravity = true;
             charRigidbody.constraints = RigidbodyConstraints.None;
-            effect.Play(true);
         }
 
         if (Input.GetKeyDown("space"))
             CharacterJump();
-            
+
         _players = gamePlayController.players;
     }
 
