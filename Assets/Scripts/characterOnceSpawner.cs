@@ -26,7 +26,6 @@ public class characterOnceSpawner : MonoBehaviour
         Destroy(parentObject);
     }
 
-
     private void CreateNewPlayer(Transform _position)
     {
         var _gameoject = Instantiate(playerExample, new Vector3(_position.position.x,_position.position.y,_position.position.z), Quaternion.identity);
