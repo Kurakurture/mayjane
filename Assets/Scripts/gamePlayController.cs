@@ -32,7 +32,6 @@ public class gamePlayController : MonoBehaviour
             EverySecondChecker();
             _speedTimer = 0;
         }
-        //checkCountOfChars();
     }
 
     public void AddPlayerToList(GameObject _player)
@@ -40,17 +39,7 @@ public class gamePlayController : MonoBehaviour
         var controller = _player.GetComponent<characterController>();
         players.Add(controller);
     }
-
-    public void checkCountOfChars()
-    {
-        countOfChars = 0;
-        for (int a = 0; a < players.Count; a++)
-        {
-            if (players[a] != null)
-                countOfChars++;
-        }
-    }
-
+    
     public void EverySecondChecker()
     {
         scoreText.text = players.Count.ToString();
