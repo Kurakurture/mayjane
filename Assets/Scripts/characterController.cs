@@ -13,15 +13,17 @@ public class characterController : MonoBehaviour
     public float randomForceY;
     public float forceX;
     public float randomForceX;
-    public Material[] charMaterials;
-    public ParticleSystem effect;
-    public bool iAmMain = false;
 
-    public int numberOfChar;
+    public Vector3 myForce;
+
+    public int heightOfDeath;
 
     public List<characterController> _players;
 
     public gamePlayController gamePlayController;
+
+    private float speed = 0.01f;
+    float _speedTimer;
 
     void Start()
     {
@@ -43,23 +45,39 @@ public class characterController : MonoBehaviour
 
     void Update()
     {
+        myForce = charRigidbody.velocity;
+
         if (!active)
         {
             charRigidbody.useGravity = false;
             charRigidbody.constraints = RigidbodyConstraints.FreezePositionY;
-            effect.Play(false);
         }
         else
         {
             charRigidbody.useGravity = true;
             charRigidbody.constraints = RigidbodyConstraints.None;
-            effect.Play(true);
         }
 
         if (Input.GetKeyDown("space"))
             CharacterJump();
-            
+
+        if (this.transform.position.y <= heightOfDeath)
+            Destroy(gameObject);
+
+        if (this.transform.position.y >= Mathf.Abs(heightOfDeath))
+            Destroy(gameObject);
+
         _players = gamePlayController.players;
+
+        _speedTimer += Time.deltaTime;
+        if (_speedTimer < speed)
+            return;
+
+        if (_speedTimer > speed && Input.GetKey("space"))
+        {
+            CharacterForce();
+            _speedTimer = 0;
+        }
     }
 
     void CharacterJump()
@@ -67,6 +85,18 @@ public class characterController : MonoBehaviour
         Vector3 _force = foreceVector;
         _force.y += forceY + Random.Range(0f, randomForceY);
         _force.x += forceX + Random.Range(0f, randomForceX);
+
+        if (active)
+        {
+            charRigidbody.AddForce(_force);
+        }
+    }
+
+    void CharacterForce()
+    {
+        Vector3 _force = foreceVector;
+        _force.y += forceY / 7;
+        _force.x += forceX / 4;
 
         if (active)
         {

@@ -31,6 +31,8 @@ public class cameraPlayerLerp : MonoBehaviour
         playerX = player.charTransform.position.x;
         playerY = player.charTransform.position.y;
 
-        selfTransform.position = new Vector3(Mathf.Lerp(selfTransform.position.x, playerX, lerpSpeed), Mathf.Lerp(selfTransform.position.y, playerY, lerpSpeed), selfTransform.position.z);
+        selfTransform.position = new Vector3(Mathf.Lerp(selfTransform.position.x, playerX, lerpSpeed),
+        Mathf.Lerp(selfTransform.position.y, playerY, lerpSpeed),
+        Mathf.Lerp(selfTransform.position.z, -10 - (0.7f * gamePlayController.players.Count), lerpSpeed));
     }
 }

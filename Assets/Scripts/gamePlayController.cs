@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gamePlayController : MonoBehaviour
 {
     public List<characterController> players;
     public Text scoreText;
     public GameObject charCamera;
-    public int countOfChars = 0;
+
+    public int goalScore = 10;
 
     private void Start()
     {
@@ -18,7 +20,7 @@ public class gamePlayController : MonoBehaviour
         charCamera = GameObject.Find("Main Camera");
     }
 
-    [SerializeField] public float speed = 1;
+    private float speed = 1;
     float _speedTimer;
 
     private void Update()
@@ -32,6 +34,10 @@ public class gamePlayController : MonoBehaviour
             EverySecondChecker();
             _speedTimer = 0;
         }
+
+        if(players.Count >= goalScore){
+            SceneManager.LoadScene("EndingScene");
+        }
     }
 
     public void AddPlayerToList(GameObject _player)
@@ -39,10 +45,10 @@ public class gamePlayController : MonoBehaviour
         var controller = _player.GetComponent<characterController>();
         players.Add(controller);
     }
-    
+
     public void EverySecondChecker()
     {
-        scoreText.text = players.Count.ToString();
+        scoreText.text = string.Format("Collected: {0} / {1}", players.Count.ToString(),goalScore);
         players.RemoveAll(item => item == null);
     }
 }
