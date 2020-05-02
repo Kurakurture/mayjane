@@ -6,6 +6,7 @@ public class characterController : MonoBehaviour
 {
     public Rigidbody charRigidbody;
     public Collider charCollider;
+    public Transform charTransform;
     public bool active = false;
     public Vector3 foreceVector;
     public float forceY;
@@ -17,25 +18,28 @@ public class characterController : MonoBehaviour
 
     void Start()
     {
-
+        charTransform = this.transform;
     }
 
-    private void OnTriggerEnter(Collider other) {
-        
-        if(other.tag == "player")
-        active = true;
-        
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag == "player")
+            active = true;
+
     }
 
 
 
     void FixedUpdate()
     {
-        if (!active){
+        if (!active)
+        {
             charRigidbody.useGravity = false;
             effect.Play(false);
-            }
-        else{
+        }
+        else
+        {
             charRigidbody.useGravity = true;
             effect.Play(true);
 
