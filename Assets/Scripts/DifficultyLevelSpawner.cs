@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DifficultyLevelSpawner : MonoBehaviour
 {
-    public float ChanceToGetHigherDiff = 0.2f;
+    public float levelWidth = 30;
+    public float ChanceToGetLowerDiff = 0.3f;
     public GameObject[] creatureSpawnerDiff1;
     public GameObject[] creatureSpawnerDiff2;
     public GameObject[] creatureSpawnerDiff3;
@@ -24,30 +25,19 @@ public class DifficultyLevelSpawner : MonoBehaviour
 
     void Start()
     {
-        SetDifficulty(lm.currentLevelDifficulty);
+        lm.currentLevelWidth = levelWidth;
+        TryToSpareDifficulty(lm.currentLevelDifficulty);
     }
 
-    void SetDifficulty(int difficultyLevel)
+    void TryToSpareDifficulty(int diff)
     {
-        int currentDiff;
-        float rnd = Random.Range(0, 1);
-
-        if (difficultyLevel < 3)
-        {
-            if (rnd > 1 - ChanceToGetHigherDiff)
-                currentDiff = difficultyLevel + 1;
-            else
-                currentDiff = difficultyLevel;
-        }
-        else
-        {
-            if (rnd > 1 - ChanceToGetHigherDiff)
-                currentDiff = difficultyLevel -1;
-            else
-                currentDiff = difficultyLevel;
-        }
-        spawnCreatures(currentDiff);
-        spawnObjects(currentDiff);
+        float rnd = Random.Range(0.0f, 1.0f);
+        if (diff > 2 && rnd > 1 - ChanceToGetLowerDiff / 2)
+            diff = diff - 2;
+        else if (diff > 1 && rnd > 1 - ChanceToGetLowerDiff)
+            diff--;
+        spawnCreatures(diff);
+        spawnObjects(diff);
     }
 
     void spawnCreatures(int diff)

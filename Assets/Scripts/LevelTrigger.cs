@@ -17,7 +17,6 @@ public class LevelTrigger : MonoBehaviour
         if (trigger.gameObject.tag == "player" && player.active == true)
         {
             lm.pickLevel();
-            print("collision detected");
             gameObject.GetComponent<BoxCollider>().enabled = false;
         }           
     }

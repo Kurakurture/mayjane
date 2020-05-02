@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5094044261674071883, guid: 7d565e2baf0e23e4f8a0bdd9ab1a85a3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d565e2baf0e23e4f8a0bdd9ab1a85a3, type: 3}
 --- !u!1 &265291182 stripped
@@ -539,8 +544,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4935b118623674c48ad4e5b0ab1bedae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetweenLevels: 30
+  levelWidth: 30
+  levelsCompleted: 0
+  IncreaseDifficultyAfterLevels: 5
+  currentLevelDifficulty: 1
   currentLevel: {fileID: 265291182}
+  creature: {fileID: 7885602592822566816, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
+    type: 3}
   levelPrefab:
   - {fileID: 5094044261044997488, guid: b842805cad5cf7a4cbe36b986579f48d, type: 3}
   - {fileID: 8392748168010632055, guid: 8d81c8aaf41961846917cd30ae3d2055, type: 3}
