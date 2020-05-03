@@ -14,6 +14,8 @@ public class characterController : MonoBehaviour
     public float forceX;
     public float randomForceX;
 
+    public Animation anim;
+
     public Vector3 myForce;
 
     public int heightOfDeath;
@@ -29,6 +31,16 @@ public class characterController : MonoBehaviour
     {
         charTransform = this.transform;
         gamePlayController = GameObject.Find("GameplayController").GetComponent<gamePlayController>();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        anim.Stop();
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        anim.Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,18 +89,6 @@ public class characterController : MonoBehaviour
     {
         myForce = charRigidbody.velocity;
 
-        /*
-        if(charRigidbody.velocity.y>6)
-        {
-            charRigidbody.AddForce(new Vector3(0,-myForce.y/3,0));
-        }
-
-        if(charRigidbody.velocity.x>4)
-        {
-            charRigidbody.AddForce(new Vector3(0,-myForce.x/2,0));
-        }
-        */
-
         if (charRigidbody.velocity.x < 0)
         {
             charRigidbody.AddForce(new Vector3(0, -myForce.x / 2, 0));
@@ -115,6 +115,7 @@ public class characterController : MonoBehaviour
         {
             if (_speedTimer > speed)
             {
+
                 CharacterForce();
                 _speedTimer = 0;
             }

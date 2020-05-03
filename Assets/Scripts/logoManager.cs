@@ -5,22 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class logoManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("space") || Input.touchCount > 0 || Input.GetMouseButtonDown(0))
             goToGame();
     }
 
-
-    void goToGame(){
-
-SceneManager.LoadScene("Game");
+    void goToGame()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
