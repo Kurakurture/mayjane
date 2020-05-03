@@ -350,6 +350,7 @@ MonoBehaviour:
   heightOfDeath: -10
   _players: []
   gamePlayController: {fileID: 0}
+  myIndex: 0
 --- !u!54 &5769456191155208782
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -487,7 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bad0a8b80790f44887fbe5b3c08684a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &8811623684536793223
 GameObject:
   m_ObjectHideFlags: 0
