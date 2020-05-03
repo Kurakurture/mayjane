@@ -92,7 +92,7 @@ public class gamePlayController : MonoBehaviour
                 checkIndex = a;
             }
         }
-        _lm.player = players[currentCharIndex].gameObject;
+       // _lm.player = players[currentCharIndex].gameObject;
         currentCharIndex = checkIndex;
         rightPoint = checkIn;
     }
