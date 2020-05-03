@@ -9,6 +9,7 @@ TagManager:
   - scale
   - scaleBig
   - scaleSmall
+  - scaleAllSmall
   layers:
   - Default
   - TransparentFX

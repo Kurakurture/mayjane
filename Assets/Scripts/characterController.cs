@@ -44,12 +44,22 @@ public class characterController : MonoBehaviour
 
         if (other.tag == "scaleBig")
         {
-           charTransform.localScale = new Vector3(charTransform.localScale.x * 1.7f, charTransform.localScale.y * 1.7f, charTransform.localScale.z * 1.7f);
+            charTransform.localScale = new Vector3(charTransform.localScale.x * 1.7f, charTransform.localScale.y * 1.7f, charTransform.localScale.z * 1.7f);
         }
 
         if (other.tag == "scaleSmall")
         {
-           charTransform.localScale = new Vector3(charTransform.localScale.x * 0.7f, charTransform.localScale.y * 0.7f, charTransform.localScale.z * 0.7f);
+            charTransform.localScale = new Vector3(charTransform.localScale.x * 0.7f, charTransform.localScale.y * 0.7f, charTransform.localScale.z * 0.7f);
+        }
+
+        if (other.tag == "scaleAllSmall")
+        {
+            for (int a = 0; a < _players.Count; a++)
+            {
+                var  currentChar = _players[a];
+                currentChar.charTransform.localScale = new Vector3(currentChar.charTransform.localScale.x * 0.7f, currentChar.charTransform.localScale.y * 0.7f, currentChar.charTransform.localScale.z * 0.7f);
+            }
+            other.enabled = false;
         }
     }
 
@@ -57,17 +67,22 @@ public class characterController : MonoBehaviour
     {
         myForce = charRigidbody.velocity;
 
-                /*
-                if(charRigidbody.velocity.y>6)
-                {
-                    charRigidbody.AddForce(new Vector3(0,-myForce.y/3,0));
-                }
+        /*
+        if(charRigidbody.velocity.y>6)
+        {
+            charRigidbody.AddForce(new Vector3(0,-myForce.y/3,0));
+        }
 
-                if(charRigidbody.velocity.x>4)
-                {
-                    charRigidbody.AddForce(new Vector3(0,-myForce.x/2,0));
-                }
-                */
+        if(charRigidbody.velocity.x>4)
+        {
+            charRigidbody.AddForce(new Vector3(0,-myForce.x/2,0));
+        }
+        */
+
+        if (charRigidbody.velocity.x < 0)
+        {
+            charRigidbody.AddForce(new Vector3(0, -myForce.x / 2, 0));
+        }
 
         if (!active)
         {
