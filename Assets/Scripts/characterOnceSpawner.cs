@@ -17,7 +17,7 @@ public class characterOnceSpawner : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CreateNewPlayer(this.transform);
-        Destroy(parentObject);
+        
     }
 
     private void CreateNewPlayer(Transform _position)
@@ -32,5 +32,7 @@ public class characterOnceSpawner : MonoBehaviour
         _controller.charRigidbody.velocity = _mainplayerRigidbody.velocity;
 
         gamePlayController.players.Add(_controller);
+        Destroy(parentObject);
+        this.enabled = false;
     }
 }
