@@ -9,11 +9,14 @@ public class gamePlayController : MonoBehaviour
     public List<characterController> players;
     public Text scoreText;
     public GameObject charCamera;
+    public float rightPoint;
+    public int currentCharIndex;
 
     public int goalScore = 10;
 
     private void Start()
     {
+
         if (players.Count < 1)
             AddPlayerToList(GameObject.Find("character"));
 
@@ -23,11 +26,14 @@ public class gamePlayController : MonoBehaviour
     private float speed = 1;
     float _speedTimer;
 
+    private float minSpeed = 0.1f;
+    float _minSpeedTimer;
+
     private void Update()
     {
         _speedTimer += Time.deltaTime;
-        if (_speedTimer < speed)
-            return;
+        _minSpeedTimer += Time.deltaTime;
+
 
         if (_speedTimer > speed)
         {
@@ -35,13 +41,12 @@ public class gamePlayController : MonoBehaviour
             _speedTimer = 0;
         }
 
-        if(players.Count >= goalScore){
-            SceneManager.LoadScene("EndingScene");
+        if (_minSpeedTimer > minSpeed)
+        {
+            EveryMinSecondChecker();
+            _minSpeedTimer = 0;
         }
 
-        if(players.Count <= 0){
-            SceneManager.LoadScene("FailScene");
-        }
     }
 
     public void AddPlayerToList(GameObject _player)
@@ -52,7 +57,44 @@ public class gamePlayController : MonoBehaviour
 
     public void EverySecondChecker()
     {
-        scoreText.text = string.Format("Collected: {0} / {1}", players.Count.ToString(),goalScore);
+        scoreText.text = string.Format("Collected: {0} / {1}", players.Count.ToString(), goalScore);
         players.RemoveAll(item => item == null);
+
+        if (players.Count >= goalScore)
+        {
+            SceneManager.LoadScene("EndingScene");
+        }
+
+        if (players.Count <= 0)
+        {
+            SceneManager.LoadScene("FailScene");
+        }
+    }
+
+    public void EveryMinSecondChecker()
+    {
+        //rightPoint = players[0].charTransform.position.x;
+        MostRightChecker();
+    }
+
+
+    public void MostRightChecker()
+    {
+        float checkIn = -1000;
+        int checkIndex = 0;
+
+        for (int a = 0; a < players.Count; a++)
+        {
+            if (players[a].charTransform.position.x > checkIn)
+            {
+                var pluyer = players[a];
+                pluyer.myIndex = a;
+
+                checkIn = players[a].charTransform.position.x;
+                checkIndex = a;
+            }
+        }
+        currentCharIndex = checkIndex;
+        rightPoint = checkIn;
     }
 }

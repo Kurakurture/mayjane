@@ -27,6 +27,8 @@ public class characterController : MonoBehaviour
     private float speed = 0.01f;
     float _speedTimer;
 
+    public int myIndex;
+
     void Start()
     {
         charTransform = this.transform;
@@ -150,10 +152,13 @@ public class characterController : MonoBehaviour
 
     void PackForce()
     {
+        if(myIndex == gamePlayController.currentCharIndex)
+        return;
+        
         Vector3 _force = new Vector3(0, 0, 0);
 
         var myVector = this.transform.position;
-        var goalVector = _players[0].charTransform.position;
+        var goalVector = _players[gamePlayController.currentCharIndex].charTransform.position;
 
         if (charTransform.position.x > _players[0].charTransform.position.x + 5)
         {
