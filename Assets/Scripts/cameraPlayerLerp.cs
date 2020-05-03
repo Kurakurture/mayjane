@@ -29,12 +29,12 @@ public class cameraPlayerLerp : MonoBehaviour
 
         if (_players.Count != 0)
         {
-            player = _players[_players.FindIndex(item => item != null)];
-
-            playerX = player.charTransform.position.x;
+            //player = _players[_players.FindIndex(item => item != null)];
+            player = _players[gamePlayController.currentCharIndex];
+            //playerX = player.charTransform.position.x;
             playerY = player.charTransform.position.y;
 
-            selfTransform.position = new Vector3(Mathf.Lerp(selfTransform.position.x, playerX, lerpSpeed),
+            selfTransform.position = new Vector3(Mathf.Lerp(selfTransform.position.x, gamePlayController.rightPoint, lerpSpeed),
             Mathf.Lerp(selfTransform.position.y, playerY, lerpSpeed),
             Mathf.Lerp(selfTransform.position.z, -10 - (0.7f * gamePlayController.players.Count), lerpSpeed));
         }
