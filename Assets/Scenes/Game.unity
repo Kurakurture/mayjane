@@ -559,7 +559,7 @@ MonoBehaviour:
   IncreaseDifficultyAfterLevels: 5
   currentLevelDifficulty: 1
   currentLevel: {fileID: 265291182}
-  creature: {fileID: 7885602592822566816, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
+  creature: {fileID: 5681883586992793964, guid: 60d9dd3d0f58f4c9bb305e6e61ac69f1,
     type: 3}
   levelPrefab:
   - {fileID: 5094044261044997488, guid: b842805cad5cf7a4cbe36b986579f48d, type: 3}

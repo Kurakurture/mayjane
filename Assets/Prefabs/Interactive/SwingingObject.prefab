@@ -25,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6973836070999670721}
-  m_LocalRotation: {x: 0, y: 0, z: 0.48948604, w: -0.8720112}
-  m_LocalPosition: {x: -0.5804976, y: 6.8158417, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6973836071655395981}
@@ -63,8 +63,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tr: {fileID: 6973836070999670722}
   rb: {fileID: 6973836070999670748}
-  torque: 10
+  torque: 50
   rotatingSpeed: 1
+  swingAngle: 180
 --- !u!1 &6973836071655395980
 GameObject:
   m_ObjectHideFlags: 0
