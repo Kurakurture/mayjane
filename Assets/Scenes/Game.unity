@@ -558,7 +558,7 @@ MonoBehaviour:
   levelPrefab:
   - {fileID: 5094044261044997488, guid: 42f928ba412145b4e9f3e3547c5fd677, type: 3}
   - {fileID: 5094044261044997488, guid: 839116774abeb80488d7a2f5ea16d6a2, type: 3}
-  - {fileID: 8392748168010632055, guid: 8d81c8aaf41961846917cd30ae3d2055, type: 3}
+  - {fileID: 8392748168010632055, guid: ccdc9498b369e4ef382af25b8929bca9, type: 3}
   levelForDiff1Only: []
   levelForDiff2Only: []
   levelForDiff3Only: []
@@ -624,6 +624,7 @@ MonoBehaviour:
   charCamera: {fileID: 0}
   rightPoint: 0
   currentCharIndex: 0
+  _lm: {fileID: 0}
   goalScore: 10
 --- !u!1 &2039968004
 GameObject:
