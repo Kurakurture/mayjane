@@ -313,21 +313,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasGameUI
       objectReference: {fileID: 0}
-    - target: {fileID: 6748947366517132355, guid: ffe4b6c25ddb54496935f333d3b5e4ff,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6748947366517132355, guid: ffe4b6c25ddb54496935f333d3b5e4ff,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6748947366517132355, guid: ffe4b6c25ddb54496935f333d3b5e4ff,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe4b6c25ddb54496935f333d3b5e4ff, type: 3}
 --- !u!114 &461403745 stripped
