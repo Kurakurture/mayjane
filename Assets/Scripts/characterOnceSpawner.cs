@@ -7,17 +7,23 @@ public class characterOnceSpawner : MonoBehaviour
     public GameObject playerExample;
     public gamePlayController gamePlayController;
     public GameObject parentObject;
+    public SpriteRenderer sprite;
     private List<characterController> _players;
+    private AudioSource sound;
 
     void Start()
     {
         gamePlayController = GameObject.Find("GameplayController").GetComponent<gamePlayController>();
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         CreateNewPlayer(this.transform);
-        
+        sound.Play();
+        sprite.enabled = false;
+        gameObject.GetComponent<Collider>().enabled = false;
+        Destroy(parentObject, 2);
     }
 
     private void CreateNewPlayer(Transform _position)
@@ -32,7 +38,5 @@ public class characterOnceSpawner : MonoBehaviour
         _controller.charRigidbody.velocity = _mainplayerRigidbody.velocity;
 
         gamePlayController.players.Add(_controller);
-        Destroy(parentObject);
-        this.enabled = false;
     }
 }

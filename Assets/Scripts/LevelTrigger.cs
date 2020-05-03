@@ -11,7 +11,7 @@ public class LevelTrigger : MonoBehaviour
         lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
-    private void OnTriggerExit(Collider trigger)
+    private void OnTriggerEnter(Collider trigger)
     {
         characterController player = trigger.gameObject.GetComponent<characterController>();
         if (trigger.gameObject.tag == "player" && player.active == true)
