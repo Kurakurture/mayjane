@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public int IncreaseDifficultyAfterLevels = 5;
     public int currentLevelDifficulty = 1;
     public GameObject currentLevel;
+    public GameObject player;
     public GameObject creature;
     public GameObject[] levelPrefab;
     public GameObject[] levelForDiff1Only;
