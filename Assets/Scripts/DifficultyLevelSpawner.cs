@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DifficultyLevelSpawner : MonoBehaviour
 {
-    public float levelWidth = 30;
     public float ChanceToGetLowerDiff = 0.3f;
     public GameObject[] creatureSpawnerDiff1;
     public GameObject[] creatureSpawnerDiff2;
@@ -25,7 +24,6 @@ public class DifficultyLevelSpawner : MonoBehaviour
 
     void Start()
     {
-        lm.currentLevelWidth = levelWidth;
         TryToSpareDifficulty(lm.currentLevelDifficulty);
     }
 
