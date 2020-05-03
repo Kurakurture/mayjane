@@ -12,11 +12,12 @@ public class gamePlayController : MonoBehaviour
     public float rightPoint;
     public int currentCharIndex;
 
+    public LevelManager _lm;
+
     public int goalScore = 10;
 
     private void Start()
     {
-
         if (players.Count < 1)
             AddPlayerToList(GameObject.Find("character"));
 
@@ -34,7 +35,6 @@ public class gamePlayController : MonoBehaviour
         _speedTimer += Time.deltaTime;
         _minSpeedTimer += Time.deltaTime;
 
-
         if (_speedTimer > speed)
         {
             EverySecondChecker();
@@ -46,7 +46,6 @@ public class gamePlayController : MonoBehaviour
             EveryMinSecondChecker();
             _minSpeedTimer = 0;
         }
-
     }
 
     public void AddPlayerToList(GameObject _player)
@@ -77,7 +76,6 @@ public class gamePlayController : MonoBehaviour
         MostRightChecker();
     }
 
-
     public void MostRightChecker()
     {
         float checkIn = -1000;
@@ -94,6 +92,7 @@ public class gamePlayController : MonoBehaviour
                 checkIndex = a;
             }
         }
+       // _lm.player = players[currentCharIndex].gameObject;
         currentCharIndex = checkIndex;
         rightPoint = checkIn;
     }

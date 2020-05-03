@@ -553,13 +553,12 @@ MonoBehaviour:
   IncreaseDifficultyAfterLevels: 5
   currentLevelDifficulty: 1
   currentLevel: {fileID: 265291182}
-  player: {fileID: 1754416452}
   creature: {fileID: 5681883586992793964, guid: 60d9dd3d0f58f4c9bb305e6e61ac69f1,
     type: 3}
   levelPrefab:
-  - {fileID: 5094044261044997488, guid: b842805cad5cf7a4cbe36b986579f48d, type: 3}
+  - {fileID: 5094044261044997488, guid: 42f928ba412145b4e9f3e3547c5fd677, type: 3}
+  - {fileID: 5094044261044997488, guid: 839116774abeb80488d7a2f5ea16d6a2, type: 3}
   - {fileID: 8392748168010632055, guid: 8d81c8aaf41961846917cd30ae3d2055, type: 3}
-  - {fileID: 4509066869926727997, guid: 1f96318a84d7d744f95edc39e06a37b6, type: 3}
   levelForDiff1Only: []
   levelForDiff2Only: []
   levelForDiff3Only: []
@@ -623,13 +622,9 @@ MonoBehaviour:
   players: []
   scoreText: {fileID: 461403745}
   charCamera: {fileID: 0}
+  rightPoint: 0
+  currentCharIndex: 0
   goalScore: 10
---- !u!1 &1754416452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7885602592822566816, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
-    type: 3}
-  m_PrefabInstance: {fileID: 4941145391866550007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2039968004
 GameObject:
   m_ObjectHideFlags: 0
