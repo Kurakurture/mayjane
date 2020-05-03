@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swingingScript : MonoBehaviour
+public class swingingScriptDown : MonoBehaviour
 {
     public Transform tr;
     public Rigidbody rb;
@@ -33,12 +33,12 @@ public class swingingScript : MonoBehaviour
         rb.AddTorque(0, 0, torque);
         //print(rb.rotation);
 
-        if (tr.rotation.z >= swingAngle/300)
+        if (tr.rotation.z <= swingAngle/300)
         {
             torque = -1 * torque;
             SetDirection();
         }
-        else if (tr.rotation.z <= swingAngle / -300)
+        else if (tr.rotation.z >= swingAngle / -300)
         {
             torque = -1 * torque;
             SetDirection();
