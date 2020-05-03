@@ -151,13 +151,13 @@ public class characterController : MonoBehaviour
         var myVector = this.transform.position;
         var goalVector = _players[0].charTransform.position;
 
-        if (charTransform.position.x > _players[0].charTransform.position.x)
+        if (charTransform.position.x > _players[0].charTransform.position.x+5)
         {
             _force.x -= forceX;
             charRigidbody.AddForce(_force);
         }
 
-        if (charTransform.position.x < _players[0].charTransform.position.x)
+        if (charTransform.position.x < _players[0].charTransform.position.x-5)
         {
             _force.x += forceX;
             charRigidbody.AddForce(_force);
