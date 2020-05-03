@@ -11,14 +11,37 @@ public class LevelManager : MonoBehaviour
     public GameObject currentLevel;
     public GameObject creature;
     public GameObject[] levelPrefab;
+    public GameObject[] levelForDiff1Only;
+    public GameObject[] levelForDiff2Only;
+    public GameObject[] levelForDiff3Only;
+
 
     GameObject levelToDestroy;
 
     public void pickLevel()
     {
-        GameObject nextLevel = levelPrefab[Random.Range(0, levelPrefab.Length)];
+        List<GameObject> list = new List<GameObject>();
+            foreach (GameObject level in levelPrefab)
+                list.Add(level);
+
+        if (currentLevelDifficulty == 1 && levelForDiff1Only == null)
+        {
+            foreach (GameObject level in levelForDiff1Only)
+                list.Add(level);
+        }
+        else if (currentLevelDifficulty == 2 && levelForDiff2Only == null)
+        {
+            foreach (GameObject level in levelForDiff2Only)
+                list.Add(level);
+        }
+        else if (currentLevelDifficulty == 3 && levelForDiff3Only == null)
+        {
+            foreach (GameObject level in levelForDiff3Only)
+                list.Add(level);
+        }
+        GameObject nextLevel = list[Random.Range(0, list.Count)];
         loadNewAndDestroyOldLevel(nextLevel);
-        CheckLevelDifficulty();
+        SetLevelDifficulty();
     }
 
     void loadNewAndDestroyOldLevel(GameObject nextLevel)
@@ -30,7 +53,7 @@ public class LevelManager : MonoBehaviour
         levelsCompleted++;
     }
 
-    void CheckLevelDifficulty()
+    void SetLevelDifficulty()
     {
         if (levelsCompleted == IncreaseDifficultyAfterLevels || levelsCompleted == IncreaseDifficultyAfterLevels * 2)
             currentLevelDifficulty++;

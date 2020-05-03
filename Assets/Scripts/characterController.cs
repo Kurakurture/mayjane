@@ -59,7 +59,9 @@ public class characterController : MonoBehaviour
         }
 
         if (Input.GetKeyDown("space"))
+        {
             CharacterJump();
+        }
 
         if (this.transform.position.y <= heightOfDeath)
             Destroy(gameObject);
@@ -90,6 +92,7 @@ public class characterController : MonoBehaviour
         {
             charRigidbody.AddForce(_force);
         }
+        PackForce();
     }
 
     void CharacterForce()
@@ -100,6 +103,27 @@ public class characterController : MonoBehaviour
 
         if (active)
         {
+            charRigidbody.AddForce(_force);
+        }
+        PackForce();
+    }
+
+    void PackForce()
+    {
+        Vector3 _force = new Vector3(0, 0, 0);
+
+        var myVector = this.transform.position;
+        var goalVector = _players[0].charTransform.position;
+
+        if (charTransform.position.x > _players[0].charTransform.position.x)
+        {
+            _force.x -= forceX;
+            charRigidbody.AddForce(_force);
+        }
+
+        if (charTransform.position.x < _players[0].charTransform.position.x)
+        {
+            _force.x += forceX;
             charRigidbody.AddForce(_force);
         }
     }
