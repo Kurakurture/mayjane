@@ -54,6 +54,5 @@ public class gamePlayController : MonoBehaviour
     {
         scoreText.text = string.Format("Collected: {0} / {1}", players.Count.ToString(),goalScore);
         players.RemoveAll(item => item == null);
-        
     }
 }

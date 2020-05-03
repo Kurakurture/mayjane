@@ -89,18 +89,6 @@ public class characterController : MonoBehaviour
     {
         myForce = charRigidbody.velocity;
 
-        /*
-        if(charRigidbody.velocity.y>6)
-        {
-            charRigidbody.AddForce(new Vector3(0,-myForce.y/3,0));
-        }
-
-        if(charRigidbody.velocity.x>4)
-        {
-            charRigidbody.AddForce(new Vector3(0,-myForce.x/2,0));
-        }
-        */
-
         if (charRigidbody.velocity.x < 0)
         {
             charRigidbody.AddForce(new Vector3(0, -myForce.x / 2, 0));
