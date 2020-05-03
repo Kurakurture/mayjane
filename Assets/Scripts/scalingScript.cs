@@ -13,7 +13,7 @@ public class scalingScript : MonoBehaviour
     {
         if (other.gameObject.tag == "player")
         {
-            ScaleCharacters();
+            //ScaleCharacters();
 
             gameObject.SetActive(false);
         }

@@ -41,6 +41,16 @@ public class characterController : MonoBehaviour
             active = false;
             Destroy(gameObject);
         }
+
+        if (other.tag == "scaleBig")
+        {
+           charTransform.localScale = new Vector3(charTransform.localScale.x * 1.7f, charTransform.localScale.y * 1.7f, charTransform.localScale.z * 1.7f);
+        }
+
+        if (other.tag == "scaleSmall")
+        {
+           charTransform.localScale = new Vector3(charTransform.localScale.x * 0.7f, charTransform.localScale.y * 0.7f, charTransform.localScale.z * 0.7f);
+        }
     }
 
     void Update()
