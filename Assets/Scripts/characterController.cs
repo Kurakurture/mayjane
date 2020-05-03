@@ -94,7 +94,7 @@ public class characterController : MonoBehaviour
             charRigidbody.AddForce(new Vector3(0, -myForce.x / 2, 0));
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
         {
             CharacterJump();
         }
@@ -111,10 +111,13 @@ public class characterController : MonoBehaviour
         if (_speedTimer < speed)
             return;
 
-        if (_speedTimer > speed && Input.GetKey("space"))
+        if (Input.GetKey("space") || Input.GetMouseButton(0))
         {
-            CharacterForce();
-            _speedTimer = 0;
+            if (_speedTimer > speed)
+            {
+                CharacterForce();
+                _speedTimer = 0;
+            }
         }
     }
 
@@ -151,13 +154,13 @@ public class characterController : MonoBehaviour
         var myVector = this.transform.position;
         var goalVector = _players[0].charTransform.position;
 
-        if (charTransform.position.x > _players[0].charTransform.position.x+5)
+        if (charTransform.position.x > _players[0].charTransform.position.x + 5)
         {
             _force.x -= forceX;
             charRigidbody.AddForce(_force);
         }
 
-        if (charTransform.position.x < _players[0].charTransform.position.x-5)
+        if (charTransform.position.x < _players[0].charTransform.position.x - 5)
         {
             _force.x += forceX;
             charRigidbody.AddForce(_force);
