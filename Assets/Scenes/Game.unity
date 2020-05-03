@@ -544,6 +544,7 @@ MonoBehaviour:
   IncreaseDifficultyAfterLevels: 5
   currentLevelDifficulty: 1
   currentLevel: {fileID: 265291182}
+  player: {fileID: 1754416452}
   creature: {fileID: 5681883586992793964, guid: 60d9dd3d0f58f4c9bb305e6e61ac69f1,
     type: 3}
   levelPrefab:
@@ -614,6 +615,12 @@ MonoBehaviour:
   scoreText: {fileID: 461403745}
   charCamera: {fileID: 0}
   goalScore: 10
+--- !u!1 &1754416452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7885602592822566816, guid: d2d0b4778abaf45dabe4c87f7088fd1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4941145391866550007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4941145391866550007
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -44,15 +44,15 @@ public class DifficultyLevelSpawner : MonoBehaviour
         {
             case 1:
                 foreach (GameObject spawner in creatureSpawnerDiff1)
-                    Instantiate(lm.creature, spawner.transform.position, Quaternion.identity);
+                    Instantiate(lm.creature, spawner.transform.position, spawner.transform.rotation);
                 break;
             case 2:
                 foreach (GameObject spawner in creatureSpawnerDiff2)
-                    Instantiate(lm.creature, spawner.transform.position, Quaternion.identity);
+                    Instantiate(lm.creature, spawner.transform.position, spawner.transform.rotation);
                 break;
             case 3:
                 foreach (GameObject spawner in creatureSpawnerDiff3)
-                    Instantiate(lm.creature, spawner.transform.position, Quaternion.identity);
+                    Instantiate(lm.creature, spawner.transform.position, spawner.transform.rotation);
                 break;
         }
     }
@@ -63,15 +63,15 @@ public class DifficultyLevelSpawner : MonoBehaviour
         {
             case 1:
                 foreach (GameObject spawner in objectsSpawnerDiff1)
-                    Instantiate(objectsForDiff1[Random.Range(0, objectsForDiff1.Length)], spawner.transform.position, Quaternion.identity);
+                    Instantiate(objectsForDiff1[Random.Range(0, objectsForDiff1.Length)], spawner.transform.position, spawner.transform.rotation);
                 break;
             case 2:
                 foreach (GameObject spawner in objectsSpawnerDiff2)
-                    Instantiate(objectsForDiff2[Random.Range(0, objectsForDiff2.Length)], spawner.transform.position, Quaternion.identity);
+                    Instantiate(objectsForDiff2[Random.Range(0, objectsForDiff2.Length)], spawner.transform.position, spawner.transform.rotation);
                 break;
             case 3:
                 foreach (GameObject spawner in objectsSpawnerDiff3)
-                    Instantiate(objectsForDiff3[Random.Range(0, objectsForDiff3.Length)], spawner.transform.position, Quaternion.identity);
+                    Instantiate(objectsForDiff3[Random.Range(0, objectsForDiff3.Length)], spawner.transform.position, spawner.transform.rotation);
                 break;
         }
     }
