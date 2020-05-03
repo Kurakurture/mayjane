@@ -10,7 +10,17 @@ public class rotatingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (rotatingSpeed > 7)
+        {
+            rotatingSpeed = 7;
+        }
+        else
+        {
+            rotatingSpeed = Mathf.Abs(rotatingSpeed);
+        }
+
         rb.maxAngularVelocity = rotatingSpeed;
+
         if (torque >= 0)
         {
             rb.angularVelocity = new Vector3(0, 0, rotatingSpeed);
