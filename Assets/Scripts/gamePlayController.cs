@@ -38,6 +38,10 @@ public class gamePlayController : MonoBehaviour
         if(players.Count >= goalScore){
             SceneManager.LoadScene("EndingScene");
         }
+
+        if(players.Count <= 0){
+            SceneManager.LoadScene("FailScene");
+        }
     }
 
     public void AddPlayerToList(GameObject _player)
