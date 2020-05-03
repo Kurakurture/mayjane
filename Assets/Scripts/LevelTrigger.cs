@@ -13,13 +13,8 @@ public class LevelTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider trigger)
     {
-        /*characterController player = trigger.gameObject.GetComponent<characterController>();
+        characterController player = trigger.gameObject.GetComponent<characterController>();
         if (trigger.gameObject.tag == "player" && player.active == true)
-        {
-            lm.pickLevel();
-            gameObject.GetComponent<BoxCollider>().enabled = false;
-        }  */
-        if (lm.player == trigger.gameObject)
         {
             lm.pickLevel();
             gameObject.GetComponent<BoxCollider>().enabled = false;
