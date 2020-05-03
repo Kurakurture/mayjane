@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: faf4328f775df65468083d6372d7b1d0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8688392260014441854
+    second: snake_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -96,11 +99,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: snake_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 97
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28af598c541ac6780800000000000000
+      internalID: -8688392260014441854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9ee51364c227548f9992cd22a457c5ae
     internalID: 0
     vertices: []
     indices: 

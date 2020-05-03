@@ -10,11 +10,14 @@ public class fallingScript : MonoBehaviour
     private bool fall = false;
     public float fallSpeed = 1.0f;
 
+    AudioSource sound;
+
     // Start is called before the first frame update
     void Start()
     {
         tr = GetComponent<Transform>();
         //rb = GetComponent<Rigidbody>();
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class fallingScript : MonoBehaviour
             //print("trigger");
             rb.AddForce(0, -1 * fallSpeed, 0);
             rb.useGravity = true;
+            sound.Play();
         }
     }
 }

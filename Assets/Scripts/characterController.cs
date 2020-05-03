@@ -29,6 +29,8 @@ public class characterController : MonoBehaviour
 
     public int myIndex;
 
+    AudioSource sound;
+
     void Start()
     {
         charTransform = this.transform;
@@ -52,7 +54,9 @@ public class characterController : MonoBehaviour
 
         if (other.tag == "destroyer")
         {
+            sound = other.gameObject.GetComponent<AudioSource>();
             active = false;
+            sound.Play();
             Destroy(gameObject);
         }
 
