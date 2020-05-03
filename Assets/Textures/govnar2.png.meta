@@ -376,7 +376,7 @@ TextureImporter:
         width: 240
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 2, y: 0, z: 2, w: 1}
       outline: []
       physicsShape: []
@@ -384,6 +384,195 @@ TextureImporter:
       bones: []
       spriteID: 3dc68e1962ba5f830800000000000000
       internalID: 4104374817563110611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 178
+        width: 251
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76c2e15326be42f0800000000000000
+      internalID: -986651005533632897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 180
+        width: 270
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444c74849d1251c50800000000000000
+      internalID: 6635246843104576580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 455
+        width: 456
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816b39f3b66515110800000000000000
+      internalID: 1247873590386472472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_4
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 330
+        width: 149
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da0c6848c1c43780800000000000000
+      internalID: -8704119113847665968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_5
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 472
+        width: 145
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5842f7ffb837650800000000000000
+      internalID: 6229476639049549242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_6
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 455
+        width: 410
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e508e95ecba6290800000000000000
+      internalID: -7896291302247997795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 5
+        width: 1004
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6277ea58a3ee810800000000000000
+      internalID: 1796437647199512265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_8
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 61
+        width: 76
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a202dd2ba85a65520800000000000000
+      internalID: 2690519842525356074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: govnar2_9
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 76
+        width: 77
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a521ed71e83f9ff00800000000000000
+      internalID: 1151218971381207642
       vertices: []
       indices: 
       edges: []
