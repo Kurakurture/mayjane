@@ -56,7 +56,7 @@ public class characterController : MonoBehaviour
         {
             for (int a = 0; a < _players.Count; a++)
             {
-                var  currentChar = _players[a];
+                var currentChar = _players[a];
                 currentChar.charTransform.localScale = new Vector3(currentChar.charTransform.localScale.x * 0.7f, currentChar.charTransform.localScale.y * 0.7f, currentChar.charTransform.localScale.z * 0.7f);
             }
             other.enabled = false;
@@ -66,7 +66,7 @@ public class characterController : MonoBehaviour
         {
             for (int a = 0; a < _players.Count; a++)
             {
-                var  currentChar = _players[a];
+                var currentChar = _players[a];
                 currentChar.charTransform.localScale = new Vector3(currentChar.charTransform.localScale.x * 1.7f, currentChar.charTransform.localScale.y * 1.7f, currentChar.charTransform.localScale.z * 1.7f);
             }
             other.enabled = false;
@@ -92,17 +92,6 @@ public class characterController : MonoBehaviour
         if (charRigidbody.velocity.x < 0)
         {
             charRigidbody.AddForce(new Vector3(0, -myForce.x / 2, 0));
-        }
-
-        if (!active)
-        {
-            charRigidbody.useGravity = false;
-            charRigidbody.constraints = RigidbodyConstraints.FreezePositionY;
-        }
-        else
-        {
-            charRigidbody.useGravity = true;
-            charRigidbody.constraints = RigidbodyConstraints.None;
         }
 
         if (Input.GetKeyDown("space"))
