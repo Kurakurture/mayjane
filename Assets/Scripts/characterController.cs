@@ -61,6 +61,16 @@ public class characterController : MonoBehaviour
             }
             other.enabled = false;
         }
+
+        if (other.tag == "scaleAllBig")
+        {
+            for (int a = 0; a < _players.Count; a++)
+            {
+                var  currentChar = _players[a];
+                currentChar.charTransform.localScale = new Vector3(currentChar.charTransform.localScale.x * 1.7f, currentChar.charTransform.localScale.y * 1.7f, currentChar.charTransform.localScale.z * 1.7f);
+            }
+            other.enabled = false;
+        }
     }
 
     void Update()
