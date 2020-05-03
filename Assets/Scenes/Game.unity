@@ -614,6 +614,9 @@ MonoBehaviour:
   players: []
   scoreText: {fileID: 461403745}
   charCamera: {fileID: 0}
+  rightPoint: 0
+  currentCharIndex: 0
+  _lm: {fileID: 1192118805}
   goalScore: 10
 --- !u!1 &1754416452 stripped
 GameObject:
